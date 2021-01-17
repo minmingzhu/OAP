@@ -61,15 +61,10 @@ function gather() {
   rm -rf $DEV_PATH/release-package/*
   target_path=$DEV_PATH/release-package/$package_name/jars/
   mkdir -p $target_path
-  cp ../oap-cache/oap/target/*.jar $target_path
   cp ../oap-common/target/*.jar $target_path
   cp ../oap-data-source/arrow/target/*.jar $target_path
-  cp ../oap-native-sql/core/target/*.jar $target_path
-  cp ../oap-shuffle/remote-shuffle/target/*.jar $target_path
-  cp ../oap-shuffle/RPMem-shuffle/core/target/*.jar $target_path
   cp ../oap-spark/target/*.jar $target_path
   cp ../oap-mllib/mllib-dal/target/*.jar $target_path
-  cp ../dev/thirdparty/arrow/java/plasma/target/arrow-plasma-0.17.0.jar $target_path
 
   find $target_path -name "*test*"|xargs rm -rf
   cd $target_path
@@ -100,18 +95,6 @@ case $key in
     gather
     exit 0
     ;;
-    --oap-cache)
-    shift 1
-    export ONEAPI_ROOT=/tmp/
-    mvn clean package -pl com.intel.oap:oap-cache -am -Ppersistent-memory -Pvmemcache -DskipTests
-    exit 0
-    ;;
-    --spark-arrow-datasource)
-    shift 1
-    export ONEAPI_ROOT=/tmp/
-    mvn clean package -pl com.intel.oap:spark-arrow-datasource  -am -DskipTests
-    exit 0
-    ;;
     --oap-mllib )
     shift 1
     export ONEAPI_ROOT=/opt/intel/inteloneapi
@@ -119,26 +102,6 @@ case $key in
     source /opt/intel/inteloneapi/tbb/2021.1-beta07/env/vars.sh
     source /tmp/oneCCL/build/_install/env/setvars.sh
     mvn clean package -pl com.intel.oap:oap-mllib  -am -DskipTests
-    exit 0
-    ;;
-    --spark-columnar-core)
-    shift 1
-    export ONEAPI_ROOT=/tmp/
-    mvn clean package -pl com.intel.oap:spark-columnar-core  -am -DskipTests
-    exit 0
-    ;;
-    --remote-shuffle)
-    shift 1
-    export ONEAPI_ROOT=/tmp/
-    mvn clean package -pl com.intel.oap:oap-remote-shuffle  -am -DskipTests
-    exit 0
-    ;;
-    --oap-rpmem-shuffle)
-    shift 1
-    export ONEAPI_ROOT=/tmp/
-    cd $OAP_HOME/oap-shuffle/RPMem-shuffle
-    mvn clean package -DskipTests
-    cd $OAP_HOME
     exit 0
     ;;
     --oap-spark)
