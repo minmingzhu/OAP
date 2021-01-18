@@ -63,7 +63,6 @@ function gather() {
   mkdir -p $target_path
   cp ../oap-common/target/*.jar $target_path
   cp ../oap-data-source/arrow/target/*.jar $target_path
-  cp ../oap-spark/target/*.jar $target_path
   cp ../oap-mllib/mllib-dal/target/*.jar $target_path
 
   find $target_path -name "*test*"|xargs rm -rf
@@ -90,12 +89,6 @@ case $key in
     source /opt/intel/inteloneapi/tbb/2021.1-beta07/env/vars.sh
     source /tmp/oneCCL/build/_install/env/setvars.sh
     mvn clean package -pl com.intel.oap:oap-mllib  -am -DskipTests
-    exit 0
-    ;;
-    --oap-spark)
-    shift 1
-    export ONEAPI_ROOT=/tmp/
-    mvn clean package -pl com.intel.oap:oap-spark -Ppersistent-memory  -am -DskipTests
     exit 0
     ;;
     *)    # unknown option
