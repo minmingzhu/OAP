@@ -106,8 +106,8 @@ case $key in
     --oap-mllib )
     shift 1
     export ONEAPI_ROOT=/opt/intel/inteloneapi
-    source /opt/intel/inteloneapi/daal/2021.1-beta07/env/vars.sh
-    source /opt/intel/inteloneapi/tbb/2021.1-beta07/env/vars.sh
+    source /opt/intel/oneapi/daal/2021.1/env/vars.sh
+    source /opt/intel/oneapi/tbb/2021.1/env/vars.sh
     source /tmp/oneCCL/build/_install/env/setvars.sh
     mvn clean package -pl com.intel.oap:oap-mllib  -am -DskipTests
     exit 0
