@@ -16,7 +16,7 @@ case $key in
     "")
     shift 1
     echo "Start to install all compile-time dependencies for OAP ..."
-    sh $OAP_HOME/dev/scripts/prepare_oap_env.sh --prepare_all
+    sh $OAP_HOME/dev/scripts/prepare_oap_env.sh --prepare_maven --prepare_oneAPI
     exit 0
     ;;
     *)    # unknown option
