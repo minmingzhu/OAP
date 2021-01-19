@@ -387,6 +387,7 @@ function prepare_PMoF() {
 }
 
 function prepare_oneAPI() {
+  echo "Installing oneAPI components ..."
   cd $DEV_PATH/
   cd ../oap-mllib/dev/
   sudo sh install-build-deps-centos.sh
@@ -480,6 +481,11 @@ case $key in
     --prepare_llvm)
     shift 1
     prepare_llvm
+    exit 0
+    ;;
+    --prepare_oneAPI)
+    shift 1
+    prepare_oneAPI
     exit 0
     ;;
     *)    # unknown option
