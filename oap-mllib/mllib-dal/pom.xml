@@ -52,11 +52,11 @@
         </dependency>
 
         <dependency>
-            <groupId>com.intel.daal</groupId>
-            <artifactId>daal</artifactId>
-            <version>2021.1-beta</version>
+            <groupId>com.intel.dal</groupId>
+            <artifactId>dal</artifactId>
+            <version>2021.1.1</version>
             <scope>system</scope>
-            <systemPath>${env.ONEAPI_ROOT}/daal/latest/lib/daal.jar</systemPath>
+            <systemPath>${env.ONEAPI_ROOT}/dal/latest/lib/onedal.jar</systemPath>
         </dependency>
 
         <dependency>

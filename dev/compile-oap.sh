@@ -83,7 +83,7 @@ case $key in
     shift 1
     echo "Start to compile all modules of OAP ..."
     cd $OAP_HOME
-    export ONEAPI_ROOT=/opt/intel/inteloneapi
+    export ONEAPI_ROOT=/opt/intel/oneapi
     source /opt/intel/oneapi/dal/2021.1.1/env/vars.sh
     source /opt/intel/oneapi/tbb/2021.1.1/env/vars.sh
     source /tmp/oneCCL/build/_install/env/setvars.sh
@@ -105,7 +105,7 @@ case $key in
     ;;
     --oap-mllib )
     shift 1
-    export ONEAPI_ROOT=/opt/intel/inteloneapi
+    export ONEAPI_ROOT=/opt/intel/oneapi
     source /opt/intel/oneapi/dal/2021.1.1/env/vars.sh
     source /opt/intel/oneapi/tbb/2021.1.1/env/vars.sh
     source /tmp/oneCCL/build/_install/env/setvars.sh
