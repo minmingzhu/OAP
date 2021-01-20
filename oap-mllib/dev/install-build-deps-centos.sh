@@ -18,20 +18,15 @@ else
   echo "oneAPI components already installed!"
 fi  
 
-if [ ! -f /tmp/oneCCL ]; then
-  echo "Building oneCCL ..."
-  cd /tmp
-  rm -rf oneCCL
-  git clone https://github.com/oneapi-src/oneCCL
-  cd oneCCL
-  git checkout beta08
-  mkdir -p build && cd build
-  cmake ..
-  make -j 2 install
-else
-  echo "oneCCL components already installed!"
-fi
-
+echo "Building oneCCL ..."
+cd /tmp
+rm -rf oneCCL
+git clone https://github.com/oneapi-src/oneCCL
+cd oneCCL
+git checkout beta08
+mkdir -p build && cd build
+cmake ..
+make -j 2 install
 
 #
 # Setup building environments manually:
