@@ -21,6 +21,7 @@ fi
 echo "Building oneCCL ..."
 cd /tmp
 rm -rf oneCCL
+git config --global http.proxy http://child-prc.intel.com:913
 git clone https://github.com/oneapi-src/oneCCL
 cd oneCCL
 git checkout beta08
