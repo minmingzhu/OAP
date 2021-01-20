@@ -48,6 +48,7 @@
         <module>oap-data-source/arrow</module>
         <module>oap-shuffle/remote-shuffle</module>
         <module>oap-shuffle/RPMem-shuffle</module>
+        <module>oap-mllib/mllib-dal</module>
     </modules>
 
 </project>
