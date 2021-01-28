@@ -76,7 +76,6 @@ function gather() {
   echo "Please check the result in  $DEV_PATH/release-package!"
 }
 
-check_gcc
 cd $OAP_HOME
 while [[ $# -ge 0 ]]
 do
@@ -111,7 +110,7 @@ case $key in
     export ONEAPI_ROOT=/opt/intel/oneapi
     source /opt/intel/oneapi/dal/2021.1.1/env/vars.sh
     source /opt/intel/oneapi/tbb/2021.1.1/env/vars.sh
-    source /tmp/oneCCL/build/_install/env/setvars.sh
+    source /opt/intel/oneapi/ccl/2021.1.1/env/vars.sh
     mvn clean package -pl com.intel.oap:oap-mllib  -am -DskipTests
     exit 0
     ;;
