@@ -419,6 +419,11 @@ function  prepare_conda_build() {
 
 function  prepare_all() {
   prepare_maven
+  prepare_memkind
+  prepare_cmake
+  prepare_vmemcache
+  prepare_intel_arrow
+  prepare_PMoF
   prepare_oneAPI
 }
 
