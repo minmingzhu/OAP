@@ -427,6 +427,11 @@ function  prepare_all() {
   prepare_oneAPI
 }
 
+function prepare_mllib(){
+  prepare_maven
+  prepare_oneAPI
+}
+
 function oap_build_help() {
     echo " --prepare_maven            function to install Maven"
     echo " --prepare_memkind          function to install Memkind"
@@ -438,6 +443,7 @@ function oap_build_help() {
     echo " --prepare_PMDK             function to install PMDK "
     echo " --prepare_PMoF             function to install PMoF"
     echo " --prepare_all              function to install all the above"
+    echo " --prepare_mllib            function to install intel mllib"
 }
 
 check_jdk
@@ -510,6 +516,11 @@ case $key in
     --prepare_llvm)
     shift 1
     prepare_llvm
+    exit 0
+    ;;
+    --prepare_mllib)
+    shift 1
+    prepare_mllib
     exit 0
     ;;
     *)    # unknown option

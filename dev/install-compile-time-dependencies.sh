@@ -19,10 +19,10 @@ case $key in
     sh $OAP_HOME/dev/scripts/prepare_oap_env.sh --prepare_all
     exit 0
     ;;
-    --prepare_maven)
+    --prepare_mllib)
     shift 1
     echo "Start to install all compile-time dependencies for OAP ..."
-    sh $OAP_HOME/dev/scripts/prepare_oap_env.sh --prepare_maven
+    sh $OAP_HOME/dev/scripts/prepare_oap_env.sh --prepare_mllib
     exit 0
     ;;
     *)    # unknown option
